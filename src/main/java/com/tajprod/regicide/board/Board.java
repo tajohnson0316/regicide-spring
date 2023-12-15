@@ -1,6 +1,7 @@
 package com.tajprod.regicide.board;
 
 import com.tajprod.regicide.board.piece.Piece;
+import com.tajprod.regicide.board.piece.knight.KnightFactory;
 import com.tajprod.regicide.board.piece.pawn.PawnFactory;
 
 import java.util.ArrayList;
@@ -18,9 +19,17 @@ public class Board {
   }
 
   private void initializePieces() {
+    // pawns
     PawnFactory pawnFactory = new PawnFactory();
     whitePieces.addAll(pawnFactory.initialize("white"));
     blackPieces.addAll(pawnFactory.initialize("black"));
+
+    // knights
+    KnightFactory knightFactory = new KnightFactory();
+    whitePieces.addAll(knightFactory.initialize("white"));
+    whitePieces.addAll(knightFactory.initialize("black"));
+
+    // bishops
 
   }
 }
