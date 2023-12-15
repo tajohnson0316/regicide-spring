@@ -60,13 +60,19 @@
             <c:forEach items="${cols}" var="col">
               <c:choose>
                 <c:when test="${(col + row) % 2 == 0}">
-                  <div style="background-color: blanchedalmond; width: 100px; height: 100px">
-                    <p>${colTags[col - 1]}${9 - row}</p>
+                  <div style="background-color: rebeccapurple; width: 100px; height: 100px">
+                    <p>${boardMatrix[col - 1][row - 1]}</p>
+                    <c:if test="${cellPieceMap.containsKey(boardMatrix[col - 1][row - 1])}">
+                      <div style="background-color: red; width: 10px; height: 10px"></div>
+                    </c:if>
                   </div>
                 </c:when>
                 <c:otherwise>
-                  <div style="background-color: rebeccapurple; width: 100px; height: 100px">
-                    <p>${colTags[col - 1]}${9 - row}</p>
+                  <div style="background-color: blanchedalmond; width: 100px; height: 100px">
+                    <p>${boardMatrix[col - 1][row - 1]}</p>
+                    <c:if test="${cellPieceMap.containsKey(boardMatrix[col - 1][row - 1])}">
+                      <div style="background-color: red; width: 10px; height: 10px"></div>
+                    </c:if>
                   </div>
                 </c:otherwise>
               </c:choose>
