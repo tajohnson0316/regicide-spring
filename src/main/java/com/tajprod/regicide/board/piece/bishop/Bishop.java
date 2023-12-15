@@ -8,7 +8,7 @@ public class Bishop extends Piece {
     super(color, location);
     this.flag = "B";
     this.value = 3;
-    this.name = "bishop";
+    this.name = color + "_bishop";
   }
 
   @Override

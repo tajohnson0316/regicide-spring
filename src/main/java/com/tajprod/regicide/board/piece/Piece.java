@@ -59,4 +59,10 @@ public abstract class Piece {
   public void setLocation(String location) {
     this.location = location;
   }
+
+  @Override
+  public String toString() {
+    return String.format("%s located at %s [%s%s], valued at %d point(s)",
+      this.name, this.location, this.flag, this.location, this.value);
+  }
 }

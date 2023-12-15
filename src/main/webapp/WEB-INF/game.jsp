@@ -51,26 +51,40 @@
     </div>
   </div>
 </nav>
-<main class="container-fluid d-flex justify-content-center p-5">
-  <div class="d-flex justify-content-center border" style="width: 800px; height: 800px">
+<main class="container-fluid p-5">
+  <div class="d-flex justify-content-center mb-5">
+    <div class="d-flex justify-content-center border" style="width: 800px; height: 800px">
+      <div>
+        <c:forEach items="${rows}" var="row">
+          <div class="d-flex">
+            <c:forEach items="${cols}" var="col">
+              <c:choose>
+                <c:when test="${(col + row) % 2 == 0}">
+                  <div style="background-color: blanchedalmond; width: 100px; height: 100px">
+                    <p>${colTags[col - 1]}${9 - row}</p>
+                  </div>
+                </c:when>
+                <c:otherwise>
+                  <div style="background-color: rebeccapurple; width: 100px; height: 100px">
+                    <p>${colTags[col - 1]}${9 - row}</p>
+                  </div>
+                </c:otherwise>
+              </c:choose>
+            </c:forEach>
+          </div>
+        </c:forEach>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between">
     <div>
-      <c:forEach items="${rows}" var="row">
-        <div class="d-flex">
-          <c:forEach items="${cols}" var="col">
-            <c:choose>
-              <c:when test="${(col + row) % 2 == 0}">
-                <div style="background-color: blanchedalmond; width: 100px; height: 100px">
-                  <p>${colTags[col - 1]}${9 - row}</p>
-                </div>
-              </c:when>
-              <c:otherwise>
-                <div style="background-color: rebeccapurple; width: 100px; height: 100px">
-                  <p>${colTags[col - 1]}${9 - row}</p>
-                </div>
-              </c:otherwise>
-            </c:choose>
-          </c:forEach>
-        </div>
+      <c:forEach var="piece" items="${whitePieces}">
+        <p>${piece.toString()}</p>
+      </c:forEach>
+    </div>
+    <div>
+      <c:forEach var="piece" items="${blackPieces}">
+        <p>${piece.toString()}</p>
       </c:forEach>
     </div>
   </div>
