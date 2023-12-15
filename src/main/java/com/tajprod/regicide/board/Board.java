@@ -75,33 +75,33 @@ public class Board {
   private void initializePieces() {
     // pawns
     PawnFactory pawnFactory = new PawnFactory();
-    whitePieces.addAll(pawnFactory.initialize("white"));
-    blackPieces.addAll(pawnFactory.initialize("black"));
+    whitePieces.addAll(pawnFactory.initialize("images/white"));
+    blackPieces.addAll(pawnFactory.initialize("images/black"));
 
     // knights
     KnightFactory knightFactory = new KnightFactory();
-    whitePieces.addAll(knightFactory.initialize("white"));
-    blackPieces.addAll(knightFactory.initialize("black"));
+    whitePieces.addAll(knightFactory.initialize("images/white"));
+    blackPieces.addAll(knightFactory.initialize("images/black"));
 
     // bishops
     BishopFactory bishopFactory = new BishopFactory();
-    whitePieces.addAll(bishopFactory.initialize("white"));
-    blackPieces.addAll(bishopFactory.initialize("black"));
+    whitePieces.addAll(bishopFactory.initialize("images/white"));
+    blackPieces.addAll(bishopFactory.initialize("images/black"));
 
     // rooks
     RookFactory rookFactory = new RookFactory();
-    whitePieces.addAll(rookFactory.initialize("white"));
-    blackPieces.addAll(rookFactory.initialize("black"));
+    whitePieces.addAll(rookFactory.initialize("images/white"));
+    blackPieces.addAll(rookFactory.initialize("images/black"));
 
     // queen
     QueenFactory queenFactory = new QueenFactory();
-    whitePieces.addAll(queenFactory.initialize("white"));
-    blackPieces.addAll(queenFactory.initialize("black"));
+    whitePieces.addAll(queenFactory.initialize("images/white"));
+    blackPieces.addAll(queenFactory.initialize("images/black"));
 
     // king
     KingFactory kingFactory = new KingFactory();
-    whitePieces.addAll(kingFactory.initialize("white"));
-    blackPieces.addAll(kingFactory.initialize("black"));
+    whitePieces.addAll(kingFactory.initialize("images/white"));
+    blackPieces.addAll(kingFactory.initialize("images/black"));
   }
 
   public List<Piece> getWhitePieces() {

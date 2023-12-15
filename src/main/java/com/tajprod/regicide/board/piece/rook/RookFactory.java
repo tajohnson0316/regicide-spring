@@ -10,7 +10,7 @@ public class RookFactory implements PieceFactory {
   @Override
   public List<Piece> initialize(String color) {
     String row = "1";
-    if (color.equalsIgnoreCase("black")) {
+    if (color.equalsIgnoreCase("images/black")) {
       row = "8";
     }
     List<Piece> newRooks = new ArrayList<>();

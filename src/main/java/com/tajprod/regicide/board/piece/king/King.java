@@ -5,10 +5,9 @@ import com.tajprod.regicide.board.piece.Piece;
 
 public class King extends Piece {
   public King(String color, String location) {
-    super(color, location);
+    super(color, "_king", location);
     this.flag = "K";
     this.value = 99;
-    this.name = color + "_king";
   }
 
   @Override

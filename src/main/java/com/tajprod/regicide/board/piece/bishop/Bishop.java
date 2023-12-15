@@ -5,10 +5,9 @@ import com.tajprod.regicide.board.piece.Piece;
 
 public class Bishop extends Piece {
   public Bishop(String color, String location) {
-    super(color, location);
+    super(color, "_bishop", location);
     this.flag = "B";
     this.value = 3;
-    this.name = color + "_bishop";
   }
 
   @Override

@@ -5,10 +5,9 @@ import com.tajprod.regicide.board.piece.Piece;
 
 public class Pawn extends Piece {
   public Pawn(String color, String location) {
-    super(color, location);
+    super(color, "_pawn", location);
     this.flag = "";
     this.value = 1;
-    this.name = color + "_pawn";
   }
 
   @Override

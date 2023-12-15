@@ -6,12 +6,15 @@ public abstract class Piece {
   protected String flag;
   protected int value;
   protected String name;
+  protected String imageURL;
   protected String color;
   protected String location;
 
-  public Piece(String color, String location) {
+  public Piece(String color, String name, String location) {
     this.color = color;
     this.location = location;
+    this.name = color + name;
+    this.imageURL = String.format("%s.png", this.name);
   }
 
   // ========== ABSTRACT METHODS ==========
@@ -60,9 +63,13 @@ public abstract class Piece {
     this.location = location;
   }
 
+  public String getImageURL() {
+    return imageURL;
+  }
+
   @Override
   public String toString() {
-    return String.format("%s located at %s [%s%s], valued at %d point(s)",
-      this.name, this.location, this.flag, this.location, this.value);
+    return String.format("%s located at %s [%s%s], valued at %d point(s) with an image URL: %s",
+      this.name, this.location, this.flag, this.location, this.value, this.imageURL);
   }
 }

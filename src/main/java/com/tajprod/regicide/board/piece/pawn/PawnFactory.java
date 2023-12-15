@@ -12,7 +12,7 @@ public class PawnFactory implements PieceFactory {
     String[] columns = {"a", "b", "c", "d", "e", "f", "g", "h"};
 
     String row = "2";
-    if (color.equalsIgnoreCase("black")) {
+    if (color.equalsIgnoreCase("images/black")) {
       row = "7";
     }
     List<Piece> newPawns = new ArrayList<>();
