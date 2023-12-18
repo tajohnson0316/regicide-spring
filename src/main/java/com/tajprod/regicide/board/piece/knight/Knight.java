@@ -3,6 +3,8 @@ package com.tajprod.regicide.board.piece.knight;
 import com.tajprod.regicide.board.cell.Cell;
 import com.tajprod.regicide.board.piece.Piece;
 
+import java.util.List;
+
 public class Knight extends Piece {
   public Knight(String color, String location) {
     super(color, "_knight", location);
@@ -11,7 +13,7 @@ public class Knight extends Piece {
   }
 
   @Override
-  public Cell move() {
+  public List<Cell> getLegalMoves() {
     return null;
   }
 }

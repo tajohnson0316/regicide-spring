@@ -1,7 +1,11 @@
 package com.tajprod.regicide.board.piece.pawn;
 
 import com.tajprod.regicide.board.cell.Cell;
+import com.tajprod.regicide.board.cell.CellEngine;
 import com.tajprod.regicide.board.piece.Piece;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Pawn extends Piece {
   public Pawn(String color, String location) {
@@ -11,7 +15,22 @@ public class Pawn extends Piece {
   }
 
   @Override
-  public Cell move() {
+  public List<Cell> getLegalMoves() {
+    this.legalMoves = new ArrayList<>();
+    Cell currentCell = CellEngine.parseCellTag(cellTag);
+
+    switch (this.color) {
+      case ("white") -> {
+
+      }
+      case ("black") -> {
+
+      }
+      default -> {
+        return null;
+      }
+    }
+
     return null;
   }
 }

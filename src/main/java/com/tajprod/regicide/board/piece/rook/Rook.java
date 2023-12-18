@@ -3,6 +3,8 @@ package com.tajprod.regicide.board.piece.rook;
 import com.tajprod.regicide.board.cell.Cell;
 import com.tajprod.regicide.board.piece.Piece;
 
+import java.util.List;
+
 public class Rook extends Piece {
   public Rook(String color, String location) {
     super(color, "_rook", location);
@@ -11,7 +13,7 @@ public class Rook extends Piece {
   }
 
   @Override
-  public Cell move() {
+  public List<Cell> getLegalMoves() {
     return null;
   }
 }

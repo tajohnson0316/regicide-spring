@@ -1,6 +1,7 @@
 package com.tajprod.regicide.controllers;
 
 import com.tajprod.regicide.board.Board;
+import com.tajprod.regicide.board.cell.CellEngine;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,13 +15,13 @@ public class MainController {
 
     model.addAttribute("cols", colIndices);
     model.addAttribute("rows", rowIndices);
-    model.addAttribute("boardMatrix", Board.boardMatrix);
+    model.addAttribute("cellMatrix", CellEngine.cellMatrix);
 
     Board board = new Board();
 
     model.addAttribute("whitePieces", board.getWhitePieces());
     model.addAttribute("blackPieces", board.getBlackPieces());
-    model.addAttribute("cellPieceMap", board.getCellPieceMap());
+    model.addAttribute("pieceMap", board.getPieceMap());
 
     return "game.jsp";
   }

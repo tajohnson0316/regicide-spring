@@ -62,22 +62,22 @@
                 <c:when test="${(col + row) % 2 == 0}">
                   <div class="position-relative" style="background-color: rebeccapurple; width: 100px; height: 100px">
                     <p class="position-absolute">
-                        ${boardMatrix[col - 1][row - 1]}
+                        ${cellMatrix[col - 1][row - 1]}
                     </p>
-                    <c:if test="${cellPieceMap.containsKey(boardMatrix[col - 1][row - 1])}">
+                    <c:if test="${pieceMap.containsKey(cellMatrix[col - 1][row - 1])}">
                       <img
-                          src="${cellPieceMap.get(boardMatrix[col - 1][row - 1]).imageURL}">
+                          src="${pieceMap.get(cellMatrix[col - 1][row - 1]).imageURL}">
                     </c:if>
                   </div>
                 </c:when>
                 <c:otherwise>
                   <div class="position-relative" style="background-color: blanchedalmond; width: 100px; height: 100px">
-                    <c:if test="${cellPieceMap.containsKey(boardMatrix[col - 1][row - 1])}">
+                    <c:if test="${pieceMap.containsKey(cellMatrix[col - 1][row - 1])}">
                       <p class="position-absolute">
-                          ${boardMatrix[col - 1][row - 1]}
+                          ${cellMatrix[col - 1][row - 1]}
                       </p>
                       <img
-                          src="${cellPieceMap.get(boardMatrix[col - 1][row - 1]).imageURL}">
+                          src="${pieceMap.get(cellMatrix[col - 1][row - 1]).imageURL}">
                     </c:if>
                   </div>
                 </c:otherwise>
