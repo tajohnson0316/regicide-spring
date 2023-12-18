@@ -30,6 +30,10 @@ public class CellEngine {
     return cellMap.get(cellTag);
   }
 
+  public static Cell convertToCell(int x, int y) {
+    return cellMap.get(convertToTag(x, y));
+  }
+
   public static String convertToTag(int x, int y) {
     int colIdx = x - 1;
     int rowIdx = y - 1;

@@ -72,10 +72,10 @@
                 </c:when>
                 <c:otherwise>
                   <div class="position-relative" style="background-color: blanchedalmond; width: 100px; height: 100px">
+                    <p class="position-absolute">
+                        ${cellMatrix[col - 1][row - 1]}
+                    </p>
                     <c:if test="${pieceMap.containsKey(cellMatrix[col - 1][row - 1])}">
-                      <p class="position-absolute">
-                          ${cellMatrix[col - 1][row - 1]}
-                      </p>
                       <img
                           src="${pieceMap.get(cellMatrix[col - 1][row - 1]).imageURL}">
                     </c:if>

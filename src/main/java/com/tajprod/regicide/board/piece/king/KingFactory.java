@@ -10,7 +10,7 @@ public class KingFactory implements PieceFactory {
   @Override
   public List<Piece> initialize(String color) {
     String row = "1";
-    if (color.equalsIgnoreCase("images/black")) {
+    if (color.equalsIgnoreCase("black")) {
       row = "8";
     }
     List<Piece> newKing = new ArrayList<>();

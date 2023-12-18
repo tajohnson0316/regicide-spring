@@ -17,7 +17,7 @@ public abstract class Piece {
     this.color = color;
     this.cellTag = cellTag;
     this.name = color + name;
-    this.imageURL = String.format("%s/%s.png", this.color, this.name);
+    this.imageURL = String.format("images/%s/%s.png", this.color, this.name);
   }
 
   // ========== ABSTRACT METHODS ==========
