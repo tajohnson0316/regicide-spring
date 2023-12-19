@@ -1,8 +1,7 @@
 package com.tajprod.regicide.board.piece;
 
-import com.tajprod.regicide.board.cell.Cell;
-
 import java.util.List;
+import java.util.Map;
 
 public abstract class Piece {
   protected String flag;
@@ -27,7 +26,7 @@ public abstract class Piece {
    * 1.) Loop through all corresponding in-bound cells
    * 2.) Collect valid, legal moves
    */
-  public abstract List<Cell> getLegalMoves();
+  public abstract List<String> getLegalMoves(Map<String, Piece> pieceMap);
 
   // ========== GETTERS & SETTERS ==========
 

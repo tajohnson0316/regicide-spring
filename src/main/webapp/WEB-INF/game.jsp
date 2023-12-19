@@ -88,7 +88,8 @@
       </div>
     </div>
   </div>
-  <div class="d-flex justify-content-between">
+  <%-- Display toString() for all pieces --%>
+  <%--<div class="d-flex justify-content-between">
     <div>
       <c:forEach var="piece" items="${whitePieces}">
         <p>${piece.toString()}</p>
@@ -97,6 +98,13 @@
     <div>
       <c:forEach var="piece" items="${blackPieces}">
         <p>${piece.toString()}</p>
+      </c:forEach>
+    </div>
+  </div>--%>
+  <div class="d-flex justify-content-center">
+    <div>
+      <c:forEach var="move" items="${selectMoves}">
+        <p>${move}</p>
       </c:forEach>
     </div>
   </div>

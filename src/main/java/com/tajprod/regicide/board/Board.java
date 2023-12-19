@@ -59,7 +59,6 @@ public class Board {
     allPieces.addAll(blackPieces);
     for (Piece piece : allPieces) {
       String cellTag = piece.getCellTag();
-      // put the piece in the board's piece map
       pieceMap.put(cellTag, piece);
     }
   }

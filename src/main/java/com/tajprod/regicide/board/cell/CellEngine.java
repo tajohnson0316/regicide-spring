@@ -35,9 +35,17 @@ public class CellEngine {
   }
 
   public static String convertToTag(int x, int y) {
+    if (!inBounds(x, y)) {
+      return null;
+    }
     int colIdx = x - 1;
     int rowIdx = y - 1;
 
     return cellMatrix[colIdx][rowIdx];
+  }
+
+  // Chess board dimensions: { x = [1, 8] | y = [1, 8] }
+  private static boolean inBounds(int x, int y) {
+    return (x >= 1 && x <= 8) && (y >= 1 && y <= 8);
   }
 }

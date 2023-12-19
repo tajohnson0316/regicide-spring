@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.List;
+
 @Controller
 public class MainController {
   @GetMapping("/play")
@@ -18,10 +20,12 @@ public class MainController {
     model.addAttribute("cellMatrix", CellEngine.cellMatrix);
 
     Board board = new Board();
+    List<String> selectMoves = board.getPieceMap().get("d7").getLegalMoves(board.getPieceMap());
 
     model.addAttribute("whitePieces", board.getWhitePieces());
     model.addAttribute("blackPieces", board.getBlackPieces());
     model.addAttribute("pieceMap", board.getPieceMap());
+    model.addAttribute("selectMoves", selectMoves);
 
     return "game.jsp";
   }
