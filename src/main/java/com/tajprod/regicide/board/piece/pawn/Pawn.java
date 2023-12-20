@@ -1,7 +1,6 @@
 package com.tajprod.regicide.board.piece.pawn;
 
 import com.tajprod.regicide.board.Board;
-import com.tajprod.regicide.board.cell.Cell;
 import com.tajprod.regicide.board.cell.CellEngine;
 import com.tajprod.regicide.board.piece.Piece;
 
@@ -31,7 +30,6 @@ public class Pawn extends Piece {
     this.legalMoves = new ArrayList<>();
 
     // Get the pawn's current Cell properties
-    Cell currentCell = CellEngine.parseCellTag(cellTag);
     int currentX = currentCell.col();
     int currentY = currentCell.row();
 

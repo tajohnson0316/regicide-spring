@@ -1,13 +1,11 @@
-package com.tajprod.regicide.board.piece.queen;
+package com.tajprod.regicide.board.piece.lospiece.queen;
 
-import com.tajprod.regicide.board.cell.Cell;
-import com.tajprod.regicide.board.cell.CellEngine;
-import com.tajprod.regicide.board.piece.Piece;
+import com.tajprod.regicide.board.piece.lospiece.LoSPiece;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Queen extends Piece {
+public class Queen extends LoSPiece {
   public Queen(String color, String location) {
     super(color, "_queen", location);
     this.flag = "Q";
@@ -25,30 +23,22 @@ public class Queen extends Piece {
   public List<String> getLegalMoves() {
     this.legalMoves = new ArrayList<>();
 
-    // Get the queen's current Cell properties
-    Cell currentCell = CellEngine.parseCellTag(cellTag);
-    int currentX = currentCell.col();
-    int currentY = currentCell.row();
-
     // forward direction
-    for (int y = currentY; y < 8; y++) {
-      if (foundBlockedCell(currentX, y)) break;
-    }
-
+    validateForwardFile();
     // reverse direction
-    for (int y = currentY; y > 1; y--) {
-      if (foundBlockedCell(currentX, y)) break;
-    }
-
+    validateReverseFile();
     // left direction
-    for (int x = currentX; x > 1; x--) {
-      if (foundBlockedCell(x, currentY)) break;
-    }
-
+    validateLeftFile();
     // right direction
-    for (int x = currentX; x < 8; x++) {
-      if (foundBlockedCell(x, currentY)) break;
-    }
+    validateRightFile();
+    // forward-right direction
+    validateForwardRightDiagonals();
+    // reverse-right direction
+    validateReverseRightDiagonals();
+    // forward-left direction
+    validateForwardLeftDiagonals();
+    // reverse-left direction
+    validateReverseLeftDiagonals();
 
     /*
      * 1.) x and y iterators

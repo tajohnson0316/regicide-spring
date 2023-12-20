@@ -1,4 +1,4 @@
-package com.tajprod.regicide.board.piece.queen;
+package com.tajprod.regicide.board.piece.lospiece.queen;
 
 import com.tajprod.regicide.board.piece.Piece;
 import com.tajprod.regicide.board.piece.PieceFactory;

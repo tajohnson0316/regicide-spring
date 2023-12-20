@@ -1,12 +1,12 @@
 package com.tajprod.regicide.board;
 
 import com.tajprod.regicide.board.piece.Piece;
-import com.tajprod.regicide.board.piece.bishop.BishopFactory;
 import com.tajprod.regicide.board.piece.king.KingFactory;
 import com.tajprod.regicide.board.piece.knight.KnightFactory;
+import com.tajprod.regicide.board.piece.lospiece.bishop.BishopFactory;
+import com.tajprod.regicide.board.piece.lospiece.queen.QueenFactory;
+import com.tajprod.regicide.board.piece.lospiece.rook.RookFactory;
 import com.tajprod.regicide.board.piece.pawn.PawnFactory;
-import com.tajprod.regicide.board.piece.queen.QueenFactory;
-import com.tajprod.regicide.board.piece.rook.RookFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;

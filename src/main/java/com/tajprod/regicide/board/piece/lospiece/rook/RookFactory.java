@@ -1,4 +1,4 @@
-package com.tajprod.regicide.board.piece.rook;
+package com.tajprod.regicide.board.piece.lospiece.rook;
 
 import com.tajprod.regicide.board.piece.Piece;
 import com.tajprod.regicide.board.piece.PieceFactory;

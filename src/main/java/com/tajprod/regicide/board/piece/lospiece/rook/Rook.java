@@ -1,10 +1,10 @@
-package com.tajprod.regicide.board.piece.rook;
+package com.tajprod.regicide.board.piece.lospiece.rook;
 
-import com.tajprod.regicide.board.piece.Piece;
+import com.tajprod.regicide.board.piece.lospiece.LoSPiece;
 
 import java.util.List;
 
-public class Rook extends Piece {
+public class Rook extends LoSPiece {
   public Rook(String color, String location) {
     super(color, "_rook", location);
     this.flag = "R";

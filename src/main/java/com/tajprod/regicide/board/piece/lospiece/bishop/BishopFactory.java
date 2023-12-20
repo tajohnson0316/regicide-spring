@@ -1,4 +1,4 @@
-package com.tajprod.regicide.board.piece.bishop;
+package com.tajprod.regicide.board.piece.lospiece.bishop;
 
 import com.tajprod.regicide.board.piece.Piece;
 import com.tajprod.regicide.board.piece.PieceFactory;

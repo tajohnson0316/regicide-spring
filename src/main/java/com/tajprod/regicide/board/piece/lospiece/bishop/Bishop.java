@@ -1,10 +1,10 @@
-package com.tajprod.regicide.board.piece.bishop;
+package com.tajprod.regicide.board.piece.lospiece.bishop;
 
-import com.tajprod.regicide.board.piece.Piece;
+import com.tajprod.regicide.board.piece.lospiece.LoSPiece;
 
 import java.util.List;
 
-public class Bishop extends Piece {
+public class Bishop extends LoSPiece {
   public Bishop(String color, String location) {
     super(color, "_bishop", location);
     this.flag = "B";
