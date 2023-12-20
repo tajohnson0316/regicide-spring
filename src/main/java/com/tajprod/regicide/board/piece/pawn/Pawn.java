@@ -1,12 +1,12 @@
 package com.tajprod.regicide.board.piece.pawn;
 
+import com.tajprod.regicide.board.Board;
 import com.tajprod.regicide.board.cell.Cell;
 import com.tajprod.regicide.board.cell.CellEngine;
 import com.tajprod.regicide.board.piece.Piece;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 
 public class Pawn extends Piece {
@@ -27,7 +27,7 @@ public class Pawn extends Piece {
    * TODO: EN PASSANT
    */
   @Override
-  public List<String> getLegalMoves(Map<String, Piece> pieceMap) {
+  public List<String> getLegalMoves() {
     this.legalMoves = new ArrayList<>();
 
     // Get the pawn's current Cell properties
@@ -46,11 +46,11 @@ public class Pawn extends Piece {
     // TOP-LEFT CONDITIONS
     String topLeft = CellEngine.convertToTag(currentX - 1, newY);
     if (topLeft != null) { // if top-left cell is in bounds...
-      if (!pieceMap.containsKey(topLeft)) { // if the top-left cell is empty...
+      if (!Board.pieceMap.containsKey(topLeft)) { // if the top-left cell is empty...
         // the pawn cannot move diagonally into an empty cell
         topLeft = null;
       } else { // the top-left cell is occupied...
-        if (pieceMap.get(topLeft).getColor().equals(color)) { // if the occupying piece is friendly...
+        if (Board.pieceMap.get(topLeft).getColor().equals(this.color)) { // if the occupying piece is friendly...
           // the pawn cannot take its own pieces
           topLeft = null;
         }
@@ -60,13 +60,13 @@ public class Pawn extends Piece {
     // FORWARD CONDITIONS
     String forward = CellEngine.convertToTag(currentX, newY);
     if (forward != null) { // if forward cell is in bounds...
-      if (pieceMap.containsKey(forward)) { // if the forward cell is not empty...
+      if (Board.pieceMap.containsKey(forward)) { // if the forward cell is not empty...
         // the pawn cannot move onto an occupied cell
         forward = null;
       }
 
       // DOUBLE-FORWARD CONDITIONS
-      if (!hasMoved) { // if the pawn is has not left home...
+      if (!hasMoved && forward != null) { // if the pawn is has not left home...
         int doubleForwardY;
         if (color.equals("black")) {
           doubleForwardY = newY - 1;
@@ -74,7 +74,7 @@ public class Pawn extends Piece {
           doubleForwardY = newY + 1;
         }
         String doubleForward = CellEngine.convertToTag(currentX, doubleForwardY);
-        if (pieceMap.containsKey(doubleForward)) { // if the double-forward cell is not empty...
+        if (Board.pieceMap.containsKey(doubleForward)) { // if the double-forward cell is not empty...
           // the pawn cannot move onto an occupied cell
           doubleForward = null;
         }
@@ -88,11 +88,11 @@ public class Pawn extends Piece {
     // TOP-RIGHT CONDITIONS
     String topRight = CellEngine.convertToTag(currentX + 1, newY);
     if (topRight != null) { // if top-right cell is in bounds...
-      if (!pieceMap.containsKey(topRight)) { // if the top-right cell is empty...
+      if (!Board.pieceMap.containsKey(topRight)) { // if the top-right cell is empty...
         // the pawn cannot move diagonally into an empty cell
         topRight = null;
       } else { // the top-right cell is occupied...
-        if (pieceMap.get(topRight).getColor().equals(color)) { // if the occupying piece is friendly...
+        if (Board.pieceMap.get(topRight).getColor().equals(this.color)) { // if the occupying piece is friendly...
           // the pawn cannot take its own pieces
           topRight = null;
         }

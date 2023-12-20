@@ -1,7 +1,9 @@
 package com.tajprod.regicide.board.piece;
 
+import com.tajprod.regicide.board.Board;
+import com.tajprod.regicide.board.cell.CellEngine;
+
 import java.util.List;
-import java.util.Map;
 
 public abstract class Piece {
   protected String flag;
@@ -26,7 +28,37 @@ public abstract class Piece {
    * 1.) Loop through all corresponding in-bound cells
    * 2.) Collect valid, legal moves
    */
-  public abstract List<String> getLegalMoves(Map<String, Piece> pieceMap);
+  public abstract List<String> getLegalMoves();
+
+  // ========== UTILITY METHODS ==========
+
+  protected boolean foundBlockedCell(int x, int y) {
+    String cell = CellEngine.convertToTag(x, y);
+
+    if (cell == null) {
+      return true;
+    } else if (Board.pieceMap.containsKey(cell)) { // if the cell is occupied...
+      Piece piece = Board.pieceMap.get(cell);
+      if (!piece.getColor().equals(this.color)) { // if the occupying piece is the opposing color...
+        // this piece can take the piece and occupy this cell
+        legalMoves.add(cell);
+      }
+      // the lane is blocked, exit the loop
+      return true;
+    } else legalMoves.add(cell);
+
+    return false;
+  }
+
+  protected void forwardLeftDiagonal(int startingX, int startingY) {
+    int cellX = startingX;
+    int cellY = startingY;
+
+    while (!foundBlockedCell(cellX, cellY)) {
+      cellX--;
+      cellY++;
+    }
+  }
 
   // ========== GETTERS & SETTERS ==========
 

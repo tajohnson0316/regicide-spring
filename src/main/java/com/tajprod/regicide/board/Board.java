@@ -14,10 +14,9 @@ import java.util.List;
 import java.util.Map;
 
 public class Board {
-  private List<Piece> whitePieces = new ArrayList<>();
-  private List<Piece> blackPieces = new ArrayList<>();
-
-  private Map<String, Piece> pieceMap = new HashMap<>();
+  public static final Map<String, Piece> pieceMap = new HashMap<>();
+  private final List<Piece> whitePieces = new ArrayList<>();
+  private final List<Piece> blackPieces = new ArrayList<>();
 
   public Board() {
     initializePieces();

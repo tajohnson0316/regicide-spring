@@ -20,7 +20,7 @@ public class MainController {
     model.addAttribute("cellMatrix", CellEngine.cellMatrix);
 
     Board board = new Board();
-    List<String> selectMoves = board.getPieceMap().get("d7").getLegalMoves(board.getPieceMap());
+    List<String> selectMoves = board.getPieceMap().get("d7").getLegalMoves();
 
     model.addAttribute("whitePieces", board.getWhitePieces());
     model.addAttribute("blackPieces", board.getBlackPieces());

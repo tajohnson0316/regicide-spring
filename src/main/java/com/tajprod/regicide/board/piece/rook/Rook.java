@@ -3,7 +3,6 @@ package com.tajprod.regicide.board.piece.rook;
 import com.tajprod.regicide.board.piece.Piece;
 
 import java.util.List;
-import java.util.Map;
 
 public class Rook extends Piece {
   public Rook(String color, String location) {
@@ -13,7 +12,7 @@ public class Rook extends Piece {
   }
 
   @Override
-  public List<String> getLegalMoves(Map<String, Piece> pieceMap) {
+  public List<String> getLegalMoves() {
     return null;
   }
 }
