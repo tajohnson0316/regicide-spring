@@ -2,6 +2,7 @@ package com.tajprod.regicide.board.piece.lospiece.rook;
 
 import com.tajprod.regicide.board.piece.lospiece.LoSPiece;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Rook extends LoSPiece {
@@ -13,6 +14,17 @@ public class Rook extends LoSPiece {
 
   @Override
   public List<String> getLegalMoves() {
-    return null;
+    this.legalMoves = new ArrayList<>();
+
+    // forward direction
+    validateForwardFile();
+    // reverse direction
+    validateReverseFile();
+    // left direction
+    validateLeftFile();
+    // right direction
+    validateRightFile();
+
+    return legalMoves;
   }
 }

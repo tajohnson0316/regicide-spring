@@ -40,14 +40,6 @@ public class Queen extends LoSPiece {
     // reverse-left direction
     validateReverseLeftDiagonals();
 
-    /*
-     * 1.) x and y iterators
-     * 2.) while !foundBlockedCell
-     * 3.) add to legalMoves
-     * 4.) +/-x AND +/- y
-     */
-
-
     return legalMoves;
   }
 }

@@ -19,24 +19,6 @@ public abstract class LoSPiece extends Piece {
 
   // ========== UTILITY METHODS ==========
 
-  protected boolean foundBlockedCell(int x, int y) {
-    String cellTag = CellEngine.convertToTag(x, y);
-
-    if (cellTag == null) {
-      return true;
-    } else if (Board.pieceMap.containsKey(cellTag)) { // if the cell is occupied...
-      Piece piece = Board.pieceMap.get(cellTag);
-      if (!piece.getColor().equals(this.color)) { // if the occupying piece is the opposing color...
-        // this piece can take the piece and occupy this cell
-        legalMoves.add(cellTag);
-      }
-      // the lane is blocked, exit the loop
-      return true;
-    } else legalMoves.add(cellTag);
-
-    return false;
-  }
-
   protected void validateForwardFile() {
     for (int y = this.currentCell.row(); y < 8; y++) {
       if (foundBlockedCell(this.currentCell.col(), y)) break;
@@ -99,5 +81,23 @@ public abstract class LoSPiece extends Piece {
       cellX++;
       cellY--;
     }
+  }
+
+  private boolean foundBlockedCell(int x, int y) {
+    String cellTag = CellEngine.convertToTag(x, y);
+
+    if (cellTag == null) {
+      return true;
+    } else if (Board.pieceMap.containsKey(cellTag)) { // if the cell is occupied...
+      Piece piece = Board.pieceMap.get(cellTag);
+      if (!piece.getColor().equals(this.color)) { // if the occupying piece is the opposing color...
+        // this piece can take the piece and occupy this cell
+        legalMoves.add(cellTag);
+      }
+      // the lane is blocked, exit the loop
+      return true;
+    } else legalMoves.add(cellTag);
+
+    return false;
   }
 }

@@ -17,9 +17,9 @@ public abstract class Piece {
 
   public Piece(String color, String name, String cellTag) {
     this.color = color;
-    this.cellTag = cellTag;
-    this.currentCell = CellEngine.parseCellTag(cellTag);
     this.name = color + name;
+    this.currentCell = CellEngine.parseCellTag(cellTag);
+    this.cellTag = cellTag;
     this.imageURL = String.format("images/%s/%s.png", this.color, this.name);
   }
 
@@ -29,6 +29,7 @@ public abstract class Piece {
    * HOW TO DETERMINE MOVES
    * 1.) Loop through all corresponding in-bound cells
    * 2.) Collect valid, legal moves
+   * 3.) TODO: Logic for ensuring move does not put King in check
    */
   public abstract List<String> getLegalMoves();
 
