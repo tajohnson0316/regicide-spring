@@ -11,6 +11,13 @@ public class Knight extends Piece {
     this.value = 3;
   }
 
+  /*
+   * KNIGHT CONDITIONS
+   * can move +/-2 rows and -/+1 column
+   * can move +/-1 row and -/+2 columns
+   * can "jump over" pieces
+   * > All conditions assume the cell is either empty or holding an opposing piece
+   */
   @Override
   public List<String> getLegalMoves() {
     return null;
